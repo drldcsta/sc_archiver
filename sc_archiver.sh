@@ -87,7 +87,7 @@ grab_artist () {
   if [[ -n ${override_directory} ]];then local target_dir="${override_directory}/sc_arcive/${sc_un}/${artist}";else local target_dir="${HOME}/sc_arcive/${sc_un}/${artist}";fi
   offer_break "start downloading all tracks from ${artist} to ${target_dir}"
   if [[ ! -d ${target_dir} ]];then mkdir -p ${target_dir} && simple_logger "created folder for ${artist}";fi
-  /usr/local/bin/youtube-dl --download-archive ${target_dir}/${artist}.txt -${opts} --embed-thumbnail --add-metadata --no-mtime --audio-format "mp3" -o "${target_dir}/%(title)s.%(ext)s" ${url}
+  youtube-dl --download-archive ${target_dir}/${artist}.txt -${opts} --embed-thumbnail --add-metadata --no-mtime --audio-format "mp3" -o "${target_dir}/%(title)s.%(ext)s" ${url}
   #local count=$(find ${target_dir} -name "*.mp3"|wc -l)
   #simple_logger "downloaded ${count} tracks by ${artist}"
 }
@@ -100,7 +100,7 @@ grab_user_likes () {
   local url="https://soundcloud.com/${1}/likes"
   offer_break "start downloading ${sc_un}'s liked tracks to ${target_dir}"
   if [[ ! -d ${target_dir} ]];then mkdir -p ${target_dir} && simple_logger "created folder for ${sc_un}'s liked tracks";fi
-  /usr/local/bin/youtube-dl --download-archive ${target_dir}/likes.txt -${opts} --embed-thumbnail --add-metadata --no-mtime --audio-format "mp3" -o "${target_dir}/%(title)s.%(ext)s" ${url}
+  youtube-dl --download-archive ${target_dir}/likes.txt -${opts} --embed-thumbnail --add-metadata --no-mtime --audio-format "mp3" -o "${target_dir}/%(title)s.%(ext)s" ${url}
   #local count=$(find ${target_dir} -name "*.mp3"|wc -l)
   #simple_logger "downloaded ${count} tracks by"
 }
@@ -120,6 +120,7 @@ if ! is_installed jq;then
   offer_break "install jq for you" 15
   /usr/local/bin/brew jq
 fi
+
 
 ###Time to start doing stuff
 
