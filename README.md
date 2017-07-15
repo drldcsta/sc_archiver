@@ -8,7 +8,7 @@ It did not take 30 minutes
   * Running ./sc_archiver.sh will first attempt to download dependencies. You will be prompted for each
     * I _think_ this script is fully portable, but uses brew for grabbing dependencies so really this is somewhat osx specific (but if you have `jq` and `youtube-dl` it "should" work)
   * Running ./sc_archiver.sh by itself will prompt you for your soundcloud username
-    * you can also run ./sc_archiver <soundcloud username> (useful if running in non-interactive mode)
+    * you can also run ./sc_archiver `username` to skip prompt (useful if running in non-interactive mode)
   * By default the script will ask you before installing dependencies, creating folders, or starting a download.
     * You can set the script to run non-interactively by commenting the $interactive_mode variable at the top of the script
   * Even when in non-interactive mode the script inserts pauses. This is only because you have to spam ^c to break out of the main loop and I'm not writing traps at 0400
