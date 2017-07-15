@@ -24,3 +24,4 @@ Dependencies:
  * [brew](https://www.brew.sh)
  * [youtube-dl](https://rg3.github.io/youtube-dl/)
  * [jq](https://stedolan.github.io/jq/)
+ * [ffmpeg](https://ffmpeg.org/)

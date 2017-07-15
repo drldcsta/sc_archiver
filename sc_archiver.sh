@@ -111,7 +111,14 @@ if ! is_installed brew;then
   /usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+
+
 if ! is_installed youtube-dl;then
+  offer_break "install youtube-dl for you" 15
+  /usr/local/bin/brew youtube-dl
+fi
+
+if ! is_installed ffmpeg;then
   offer_break "install youtube-dl for you" 15
   /usr/local/bin/brew youtube-dl
 fi
