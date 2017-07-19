@@ -17,9 +17,10 @@ It did not take 30 minutes
   * If you intend to move the mp3 files to a remote archive, if you keep the `artistname.txt` file in each directory the script will only download *new* liked tracks and tracks added to artist page since last run.     
 
 
-# CAVEAT: The script only downloads the first 100 artists you follow. I'm almost certainly not going back to write pagination (I follow <100 artists) but you can change the curl command in `get_collection` to either grab more artists or change the offset.
+## CAVEAT
+The script only downloads the first 100 artists you follow. I'm almost certainly not going back to write pagination (I follow <100 artists) but you can change the curl command in `get_collection` to either grab more artists or change the offset.
 
-## TL;DR, download the script, run it once to make sure all your dependencies are met, and let it prompt you to download your likes and an artist or two. If that works fine, and you don'w wnat to confirm every artist, kill the script and comment the `interactive_mode` variable. (you can also un comment `skip_likes` to save some time.) and kick it off again.
+Likely usage (**TL;DR**): download the script, run it once to make sure all your dependencies are met, and let it prompt you to download your likes and an artist or two. If that works fine, and you don'w wnat to confirm every artist, kill the script and comment the `interactive_mode` variable. (you can also un comment `skip_likes` to save some time.) and kick it off again.
 
 
 
